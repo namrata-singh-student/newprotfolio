@@ -1,0 +1,11 @@
+Model Information:
+* title:	Hacker Room low poly
+* source:	https://sketchfab.com/3d-models/hacker-room-low-poly-2d86dd3e18a44cc080f85a0e1af9ffe9
+* author:	Pudding_King (https://sketchfab.com/Pudding_King)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Hacker Room low poly" (https://sketchfab.com/3d-models/hacker-room-low-poly-2d86dd3e18a44cc080f85a0e1af9ffe9) by Pudding_King (https://sketchfab.com/Pudding_King) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
