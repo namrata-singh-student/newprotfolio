@@ -1,26 +1,29 @@
 import { useState, useEffect } from 'react';
-import resumePdf from '/src/resume/NamrataSinghResume.pdf'; // Resume file
-import music from '/src/music/music.mp3'; // Music file
-import { navLinks } from '../constants/index.js'; // Ensure navLinks is correctly imported.
+import resumePdf from '/src/resume/NamrataSinghResume.pdf';
+import music from '/src/music/music.mp3';
+import { navLinks } from '../constants/index.js';
+
 const handleResumeDownload = () => {
   const link = document.createElement('a');
   link.href = resumePdf;
   link.download = 'NamrataSinghResume.pdf';
+  document.body.appendChild(link);
   link.click();
+  document.body.removeChild(link);
 };
-const NavItems = ({ active, setActive, onClick = () => {} }) => (
-  <ul className="nav-ul">
+
+const NavItems = ({ active, setActive, onClick }) => (
+  <ul className="flex flex-col sm:flex-row sm:items-center sm:gap-6">
     {navLinks.map((item) => (
       <li key={item.id} className="nav-li">
         <a
           href={item.href}
-          download={item.download ? 'NamrataSinghResume.pdf' : undefined} // Add download attribute if defined
           className={`${
             active === item.name ? 'text-white' : 'text-neutral-400'
           } hover:text-white transition-colors text-[18px] font-medium`}
           onClick={() => {
             setActive(item.name);
-            onClick(); // Call onClick for mobile menu toggle or other logic
+            onClick && onClick();
           }}>
           {item.name}
         </a>
@@ -31,26 +34,18 @@ const NavItems = ({ active, setActive, onClick = () => {} }) => (
 
 const Navbar = () => {
   const [active, setActive] = useState('');
-  const [toggle, setToggle] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [audio] = useState(new Audio(music));
   const [isMusicPlaying, setIsMusicPlaying] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      setScrolled(scrollTop > 100);
+      setScrolled(window.scrollY > 100);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const handleResumeDownload = () => {
-    const link = document.createElement('a');
-    link.href = resumePdf;
-    link.download = 'NamrataSinghResume.pdf';
-    link.click();
-  };
 
   const toggleMusic = () => {
     if (isMusicPlaying) {
@@ -62,81 +57,76 @@ const Navbar = () => {
   };
 
   const toggleMenu = () => setIsOpen(!isOpen);
-  const closeMenu = () => setIsOpen(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-black/90">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex justify-between items-center py-5 mx-auto c-space">
-          {/* Brand Name or Logo */}
-          <a href="/" className="text-neutral-400 font-bold text-xl hover:text-white transition-colors">
-            Namrata
-          </a>
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 ${scrolled ? 'bg-black/90' : 'bg-transparent'} transition-colors`}>
+      <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+        {/* Logo */}
+        <a href="/" className="text-neutral-400 font-bold text-xl hover:text-white transition-colors">
+          Namrata
+        </a>
 
-          {/* Toggle Button */}
-          <button
-            onClick={toggleMenu}
-            className="text-neutral-400 hover:text-white focus:outline-none sm:hidden flex"
-            aria-label="Toggle menu">
-            <img src={isOpen ? '/assets/close.svg' : '/assets/menu2.svg'} alt="toggle menu" className="w-6 h-6" />
+        {/* Mobile Menu Toggle */}
+        <div className="sm:hidden flex items-center gap-4">
+          <button onClick={toggleMenu} className="text-neutral-400 hover:text-white focus:outline-none">
+            <img src={isOpen ? '/assets/close.svg' : '/assets/menu2.png'} alt="toggle menu" className="w-6 h-6" />
           </button>
           <button onClick={toggleMusic} className="text-neutral-400 hover:text-white">
-            //{' '}
             {isMusicPlaying ? (
               <img src="/musicico/music.gif" alt="Music Playing" className="w-6 h-6 invert" />
             ) : (
               <img src="/musicico/musicpause.png" alt="Music Paused" className="w-6 h-6 invert" />
             )}
           </button>
-
-          {/* Desktop Navigation */}
-          <nav className="sm:flex hidden">
-            <NavItems />
-          </nav>
         </div>
+
+        {/* Desktop Navigation */}
+        <nav className="hidden sm:flex gap-6">
+          <NavItems active={active} setActive={setActive} />
+        </nav>
       </div>
+
       {/* Mobile Navigation */}
-      {/* Mobile Navigation */}
-      //{' '}
-      {toggle && (
-        <div className="sm:hidden bg-black/90 p-6 absolute top-16 left-0 right-0 z-40">
-          <nav className="flex flex-col gap-4">
-            {navLinks.map((nav) => (
+      {isOpen && (
+        <div className="sm:hidden bg-white/90 p-6 absolute top-16 left-0 right-0 z-40 flex flex-col items-center gap-4">
+          {navLinks
+            .filter((nav) => nav.name !== 'Resume' && nav.name !== 'Music')
+            .map((nav) => (
               <a
                 key={nav.id}
-                href={`#${nav.id}`}
+                href={nav.href}
                 className={`${
-                  active === nav.title ? 'text-white' : 'text-neutral-400'
+                  active === nav.name ? 'text-white' : 'text-neutral-400'
                 } hover:text-white transition-colors text-[18px] font-medium`}
                 onClick={() => {
-                  setActive(nav.title);
-                  setToggle(false);
+                  setActive(nav.name);
+                  setIsOpen(false);
                 }}>
-                {nav.title}
+                {nav.name}
               </a>
             ))}
-            <a
-              onClick={() => {
-                handleResumeDownload();
-                setToggle(false);
-              }}
-              className="cursor-pointer text-neutral-400 hover:text-white text-[18px] font-medium">
-              Resume
-            </a>
-            <button
-              onClick={() => {
-                toggleMusic();
-                setToggle(false);
-              }}
-              className="text-neutral-400 hover:text-white flex items-center">
-              {isMusicPlaying ? (
-                <img src="/musicico/music.gif" alt="Music Playing" className="w-6 h-6 invert" />
-              ) : (
-                <img src="/musicico/musicpause.png" alt="Music Paused" className="w-6 h-6 invert" />
-              )}
-              <span className="ml-2">Music</span>
-            </button>
-          </nav>
+          <a
+            onClick={() => {
+              handleResumeDownload();
+              setIsOpen(false);
+            }}
+            className="cursor-pointer text-neutral-400 hover:text-white text-[18px] font-medium">
+            Resume
+          </a>
+          <button
+            onClick={() => {
+              toggleMusic();
+              setIsOpen(false);
+            }}
+            className="text-neutral-400 hover:text-white flex items-center">
+            {isMusicPlaying ? (
+              <img src="/musicico/music.gif" alt="Music Playing" className="w-6 h-6 invert" />
+            ) : (
+              <img src="/musicico/musicpause.png" alt="Music Paused" className="w-6 h-6 invert" />
+            )}
+            <span className="ml-2">Music</span>
+          </button>
         </div>
       )}
     </header>

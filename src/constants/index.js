@@ -70,11 +70,45 @@ export const clientReviews = [
 
 export const myProjects = [
   {
+    title: ' RecipeApp',
+    desc: ' This application allows users to search for a wide range of recipes for different dishes. There are default recipes displayed to the user when the user visits the application for the first time. Once the User enters the dish name, the recipes are fetched from an Edamam API. ',
+    subdesc:
+      'With a focus on efficiency, CarePulse integrantes complex forms and SMS notifications, by using Next.js, Appwrite, JavaScript, react.js ,BootStrap, React-Router.  that enhance operational workflows.',
+    href: 'https://recipe-app-mocha-xi.vercel.app/',
+    texture: '/textures/project/project3.mp4',
+    logo: '/assets/recipe.jpeg',
+    logoStyle: {
+      backgroundColor: '#60f5a1',
+      background:
+        'linear-gradient(0deg, #60F5A150, #60F5A150), linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(208, 213, 221, 0.8) 100%)',
+      border: '0.2px solid rgba(208, 213, 221, 1)',
+      boxShadow: '0px 0px 60px 0px rgba(35, 131, 96, 0.3)',
+    },
+    spotlight: '/assets/spotlight3.png',
+    tags: [
+      {
+        id: 1,
+        name: 'React.js',
+        path: '/assets/react.svg',
+      },
+      {
+        id: 2,
+        name: 'TailwindCSS',
+        path: 'assets/tailwindcss.png',
+      },
+      {
+        id: 3,
+        name: 'TypeScript',
+        path: '/assets/typescript.png',
+      },
+    ],
+  },
+  {
     title: 'Myntra Clone',
     desc: '❖ This includes the core features and functionalities that the Myntra clone will have, such as user registration, product browsing, search functionality, product details display, add to cart functionality and user profile management. Users can sign-up and login to perform. ',
     subdesc:
       'Built as a unique Clone with HTML, Typecript,JavaScript, Tailwind CSS, React-Router-dom. Podcastr is designed for optimal performance and scalability.',
-    href: 'https://www.youtube.com/watch?v=zfAb95tJvZQ',
+    // href: 'https://11-template-myntra-functional-clone-2ljq.vercel.app/',
     texture: '/textures/project/project1.mp4',
     logo: '/assets/myntra.jpeg',
     logoStyle: {
@@ -102,7 +136,7 @@ export const myProjects = [
       {
         id: 4,
         name: 'HTML',
-        path: '/assets/framer.png',
+        path: '/assets/html.png',
       },
     ],
   },
@@ -110,7 +144,7 @@ export const myProjects = [
     title: 'WeatherApp',
     desc: '❖ A web application which will tell the users about the weather details of any particular city. The easy and Interactive user interface will help our users to easily know about the temp, wind speed, humidity and description about the weather. .',
     subdesc: 'With WeatherApp, users can know about weather, by using  Tailwind CSS, JavaScript, HTML newest features.',
-    href: 'http://127.0.0.1:5500/',
+    href: 'https://weather-dashboard-eight-wine.vercel.app/',
     texture: '/textures/project/project2.mp4',
     logo: '/assets/whether.jpeg',
     logoStyle: {
@@ -122,7 +156,7 @@ export const myProjects = [
     tags: [
       {
         id: 1,
-        name: 'React.js',
+        name: 'javascript',
         path: '/assets/react.svg',
       },
       {
@@ -132,61 +166,18 @@ export const myProjects = [
       },
       {
         id: 3,
-        name: 'TypeScript',
-        path: '/assets/typescript.png',
-      },
-      {
-        id: 4,
-        name: 'Framer Motion',
-        path: '/assets/framer.png',
+        name: 'html',
+        path: '/assets/html.png',
       },
     ],
   },
-  {
-    title: ' RecipeApp',
-    desc: ' This application allows users to search for a wide range of recipes for different dishes. There are default recipes displayed to the user when the user visits the application for the first time. Once the User enters the dish name, the recipes are fetched from an Edamam API. ',
-    subdesc:
-      'With a focus on efficiency, CarePulse integrantes complex forms and SMS notifications, by using Next.js, Appwrite, JavaScript, react.js ,BootStrap, React-Router.  that enhance operational workflows.',
-    href: 'http://localhost:5173/',
-    texture: '/textures/project/project3.mp4',
-    logo: '/assets/recipe.jpeg',
-    logoStyle: {
-      backgroundColor: '#60f5a1',
-      background:
-        'linear-gradient(0deg, #60F5A150, #60F5A150), linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(208, 213, 221, 0.8) 100%)',
-      border: '0.2px solid rgba(208, 213, 221, 1)',
-      boxShadow: '0px 0px 60px 0px rgba(35, 131, 96, 0.3)',
-    },
-    spotlight: '/assets/spotlight3.png',
-    tags: [
-      {
-        id: 1,
-        name: 'React.js',
-        path: '/assets/react.svg',
-      },
-      {
-        id: 2,
-        name: 'TailwindCSS',
-        path: 'assets/tailwindcss.png',
-      },
-      {
-        id: 3,
-        name: 'TypeScript',
-        path: '/assets/typescript.png',
-      },
-      {
-        id: 4,
-        name: 'Framer Motion',
-        path: '/assets/framer.png',
-      },
-    ],
-  },
+
   {
     title: 'GEPO-Website',
-    desc: 'Horizon is a comprehensive online banking platform that offers users a centralized finance management dashboard. It allows users to connect multiple bank accounts, monitor real-time transactions, and seamlessly transfer money to other users.',
+    desc: '❖	Developed an admin portal for managing programs, events, and partnerships. Added features like event tracking, inquiry forms, and downloadable resources. Ensured a responsive and easy-to-use interface for better accessibility.',
     subdesc:
-      'Built with Next.js 14 Appwrite, Dwolla and Plaid, Horizon ensures a smooth and secure banking experience, tailored to meet the needs of modern consumers.',
-    href: 'https://www.youtube.com/watch?v=PuOVqP_cjkE',
+      '❖	Created a website for Global Engagement & Partnerships Office to manage international collaborations. Built using JavaScript, PHP, and MySQL with a secure login system.',
+    // href: 'https://www.youtube.com/watch?v=PuOVqP_cjkE',
     texture: '/textures/project/project4.mp4',
     logo: '/assets/project-logo4.png',
     logoStyle: {
@@ -198,7 +189,7 @@ export const myProjects = [
     tags: [
       {
         id: 1,
-        name: 'React.js',
+        name: 'javascript',
         path: '/assets/react.svg',
       },
       {
@@ -208,13 +199,13 @@ export const myProjects = [
       },
       {
         id: 3,
-        name: 'TypeScript',
-        path: '/assets/typescript.png',
+        name: 'PHP',
+        path: '/assets/php.png',
       },
       {
         id: 4,
-        name: 'Framer Motion',
-        path: '/assets/framer.png',
+        name: 'MySQL',
+        path: '/assets/mysql.png',
       },
     ],
   },
