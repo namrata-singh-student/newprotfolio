@@ -11,6 +11,7 @@ import Button from '../components/Button.jsx';
 import Target from '../components/Target.jsx';
 import CanvasLoader from '../components/CanvasLoader.jsx';
 import HeroCamera from '../components/HeroCamera.jsx';
+import Developer3D from '../components/Developer3D.jsx';
 import { calculateSizes } from '../constants/index.js';
 import { HackerRoom } from '../components/HackerRoom.jsx';
 
@@ -41,6 +42,13 @@ const Hero = () => {
             <HeroCamera isMobile={isMobile}>
               <HackerRoom scale={sizes.deskScale} position={sizes.deskPosition} rotation={[0.1, -Math.PI, 0]} />
             </HeroCamera>
+
+            {/* 3D Developer with Table */}
+            <Developer3D 
+              position={sizes.developerPosition} 
+              scale={sizes.developerScale} 
+              rotation={[0, Math.PI * 0.1, 0]} 
+            />
 
             <group>
               <Target position={sizes.targetPosition} />

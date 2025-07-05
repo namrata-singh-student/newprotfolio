@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import resumePdf from '/src/resume/NamrataSinghResume.pdf';
 import music from '/src/music/music.mp3';
 import { navLinks } from '../constants/index.js';
+import ThemeToggle from '../components/ThemeToggle.jsx';
 
 const handleResumeDownload = () => {
   const link = document.createElement('a');
@@ -85,6 +86,11 @@ const Navbar = () => {
         <nav className="hidden sm:flex gap-6">
           <NavItems active={active} setActive={setActive} />
         </nav>
+
+        {/* Theme Toggle */}
+        <div className="hidden sm:block">
+          <ThemeToggle />
+        </div>
       </div>
 
       {/* Mobile Navigation */}

@@ -149,6 +149,134 @@ body {
   .social-icon {
     @apply w-12 h-12 rounded-full flex justify-center items-center bg-black-300 border border-black-200;
   }
+
+  /* achievements section */
+  .achievement-card {
+    @apply bg-black-200 border border-black-300 rounded-lg p-6 hover:bg-black-300 transition-all duration-300 cursor-pointer;
+  }
+
+  .achievement-header {
+    @apply flex items-center justify-between mb-4;
+  }
+
+  .achievement-icon {
+    @apply w-12 h-12 rounded-lg bg-black-300 p-2 flex items-center justify-center;
+  }
+
+  .achievement-badge {
+    @apply bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium;
+  }
+
+  .achievement-title {
+    @apply text-xl font-semibold text-white mb-2;
+  }
+
+  .achievement-meta {
+    @apply flex items-center gap-4 text-sm text-white-600 mb-3;
+  }
+
+  .achievement-date {
+    @apply bg-black-300 px-2 py-1 rounded text-xs;
+  }
+
+  .achievement-location {
+    @apply bg-black-300 px-2 py-1 rounded text-xs;
+  }
+
+  .achievement-description {
+    @apply text-white-600 text-sm leading-relaxed;
+  }
+
+  .achievement-category {
+    @apply mt-4;
+  }
+
+  .category-tag {
+    @apply bg-green-600 text-white px-2 py-1 rounded text-xs font-medium;
+  }
+
+  /* skills section */
+  .skill-card {
+    @apply bg-black-200 border border-black-300 rounded-lg p-6 hover:bg-black-300 transition-all duration-300;
+  }
+
+  .skill-header {
+    @apply flex items-center justify-between mb-4;
+  }
+
+  .skill-icon {
+    @apply w-10 h-10 rounded-lg bg-black-300 p-2 flex items-center justify-center;
+  }
+
+  .skill-info {
+    @apply flex-1 ml-3;
+  }
+
+  .skill-name {
+    @apply text-lg font-semibold text-white;
+  }
+
+  .skill-category {
+    @apply text-sm text-white-600;
+  }
+
+  .skill-level {
+    @apply text-right;
+  }
+
+  .level-text {
+    @apply text-sm font-medium text-green-400;
+  }
+
+  .skill-progress {
+    @apply mt-4;
+  }
+
+  .progress-bar {
+    @apply w-full bg-black-300 rounded-full h-2 overflow-hidden;
+  }
+
+  .progress-fill {
+    @apply h-full rounded-full transition-all duration-1000 ease-out;
+  }
+
+  /* theme toggle */
+  .theme-toggle {
+    @apply fixed top-6 right-6 z-50 w-12 h-12 bg-black-300 border border-black-200 rounded-full flex items-center justify-center text-white hover:bg-black-300 transition-all duration-300;
+  }
+
+  .toggle-icon {
+    @apply flex items-center justify-center;
+  }
+
+  /* light theme styles */
+  .light {
+    @apply bg-white text-black;
+  }
+
+  .light body {
+    @apply bg-gray-50;
+  }
+
+  .light .head-text {
+    @apply text-gray-800;
+  }
+
+  .light .achievement-card {
+    @apply bg-white border-gray-200 hover:bg-gray-50;
+  }
+
+  .light .skill-card {
+    @apply bg-white border-gray-200 hover:bg-gray-50;
+  }
+
+  .light .achievement-title {
+    @apply text-gray-800;
+  }
+
+  .light .skill-name {
+    @apply text-gray-800;
+  }
 }
 
 .waving-hand {

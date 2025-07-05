@@ -11,24 +11,39 @@ export const navLinks = [
   },
   {
     id: 3,
+    name: 'Skills',
+    href: '#skills',
+  },
+  {
+    id: 4,
+    name: 'Projects',
+    href: '#projects',
+  },
+  {
+    id: 5,
+    name: 'Achievements',
+    href: '#achievements',
+  },
+  {
+    id: 6,
     name: 'Work',
     href: '#work',
   },
   {
-    id: 4,
+    id: 7,
     name: 'Contact',
     href: '#contact',
   },
   {
-    id: 5,
+    id: 8,
     name: 'Resume',
-    href: '/src/resume/NamrataSinghResume.pdf', // Path to your resume file
+    href: '/src/resume/NamrataSinghResume.pdf',
     download: true,
   },
   {
-    id: 6,
+    id: 9,
     name: 'Music',
-    href: '/src/music/music.mp3', // Path to your resume file
+    href: '/src/music/music.mp3',
     play: true,
   },
 ];
@@ -48,7 +63,7 @@ export const clientReviews = [
     position: 'Student, Developer',
     img: 'assets/image2.jpeg',
     review:
-      'Namrata’s expertise in web development is truly impressive. She delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. She’s a true professional! Fantastic work.',
+      'Namrata\'s expertise in web development is truly impressive. She delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. She\'s a true professional! Fantastic work.',
   },
   {
     id: 3,
@@ -56,7 +71,7 @@ export const clientReviews = [
     position: 'Student at HIT,Developer ',
     img: 'assets/review3.png',
     review:
-      'I can’t say enough good things about Namrata. She was able to take our complex project requirements and turn them into a seamless, functional website. Her problem-solving abilities are outstanding.',
+      'I can\'t say enough good things about Namrata. She was able to take our complex project requirements and turn them into a seamless, functional website. Her problem-solving abilities are outstanding.',
   },
   {
     id: 4,
@@ -256,72 +271,155 @@ export const calculateSizes = (isSmall, isMobile, isTablet) => {
     reactLogoPosition: isSmall ? [3, 4, 0] : isMobile ? [5, 4, 0] : isTablet ? [5, 4, 0] : [12, 3, 0],
     ringPosition: isSmall ? [-5, 7, 0] : isMobile ? [-10, 10, 0] : isTablet ? [-12, 10, 0] : [-24, 10, 0],
     targetPosition: isSmall ? [-5, -10, -10] : isMobile ? [-9, -10, -10] : isTablet ? [-11, -7, -10] : [-13, -13, -10],
+    developerPosition: isMobile ? [0, -1, 0] : [0, -2, 0],
+    developerScale: isMobile ? 0.8 : 1,
   };
 };
 
 export const workExperiences = [
   {
     id: 1,
-    name: 'SBH',
-    pos: 'Team Leader',
-    duration: 'Apri, 2024',
+    name: 'Frosthacks',
+    pos: '1st Runner Up',
+    duration: 'Feb 7-9, 2024',
     title:
-      'Finalist of SMART BENGAL HACKATHON(SBH) 2024. Collaborated with a multidisciplinary team to develop innovative solutions using frontend technologies.',
-    icon: '/assets/sbh.png',
+      'Won 1st Runner Up prize at Frosthacks Hackathon held at AOT College. Developed innovative solutions using cutting-edge technologies and collaborated with a talented team.',
+    icon: '/assets/star.png',
     animation: 'victory',
   },
   {
     id: 2,
-    name: 'Code',
-    pos: 'Team Leader',
-    duration: 'March, 2023',
-    title: 'Winner in Code Combat ',
-    icon: '/assets/code.png',
+    name: 'SBH',
+    pos: 'Finalist',
+    duration: 'April, 2024',
+    title:
+      'Finalist of SMART BENGAL HACKATHON(SBH) 2024. Collaborated with a multidisciplinary team to develop innovative solutions using frontend technologies.',
+    icon: '/assets/sbh.png',
     animation: 'clapping',
   },
   {
     id: 3,
-    name: 'BCT',
-    pos: 'Traniee',
-    duration: '2023- 2024',
-    title:
-      'DJANGO with Python, Project: Online Book Store  certificate, AI/ML ,Project: Credit Card Fraud Detection using Machine Learning',
-    icon: '/assets/bct.png',
+    name: 'Code',
+    pos: 'Winner',
+    duration: 'March, 2023',
+    title: 'Winner in Code Combat',
+    icon: '/assets/code.png',
     animation: 'salute',
   },
+  {
+    id: 4,
+    name: 'BCT',
+    pos: 'Trainee',
+    duration: '2023- 2024',
+    title:
+      'DJANGO with Python, Project: Online Book Store certificate, AI/ML, Project: Credit Card Fraud Detection using Machine Learning',
+    icon: '/assets/bct.png',
+    animation: 'idle',
+  },
+];
 
-  // {
-  //   id: 1,
-  //   role: 'Team Leader',
-  //   organisation: 'West Bengal, Smart India Hacakthon',
-  //   startDate: 'April, 2024',
-  //   endDate: 'Present',
-  //   location: 'Techno International Main',
-  //   achivement: ['SBH finelist'],
-  //   imageSrc: 'company/google.png',
-  // },
+export const achievements = [
+  {
+    id: 1,
+    title: 'Frosthacks Hackathon',
+    position: '1st Runner Up',
+    date: 'February 7-9, 2024',
+    location: 'AOT College',
+    description: 'Achieved 1st Runner Up position in the prestigious Frosthacks Hackathon, showcasing innovative problem-solving skills and technical expertise.',
+    icon: '/assets/star.png',
+    category: 'Competition',
+  },
+  {
+    id: 2,
+    title: 'Smart Bengal Hackathon',
+    position: 'Finalist',
+    date: 'April 2024',
+    location: 'West Bengal',
+    description: 'Reached the finals of SBH 2024, demonstrating exceptional teamwork and technical capabilities in developing innovative solutions.',
+    icon: '/assets/sbh.png',
+    category: 'Competition',
+  },
+  {
+    id: 3,
+    title: 'Code Combat',
+    position: 'Winner',
+    date: 'March 2023',
+    location: 'GNIT',
+    description: 'Secured first place in Code Combat competition, showcasing strong programming fundamentals and problem-solving abilities.',
+    icon: '/assets/code.png',
+    category: 'Competition',
+  },
+  {
+    id: 4,
+    title: 'Django & AI/ML Certification',
+    position: 'Trainee',
+    date: '2023-2024',
+    location: 'BCT',
+    description: 'Completed comprehensive training in Django with Python and AI/ML, including projects on Online Book Store and Credit Card Fraud Detection.',
+    icon: '/assets/bct.png',
+    category: 'Education',
+  },
+];
 
-  // {
-  //   id: 2,
-  //   role: 'Team Leader',
-  //   organisation: 'GNIT',
-  //   startDate: 'March, 2024',
-  //   endDate: 'Aug, 2023',
-  //   location: 'GNIT,Sodepur',
-  //   achivement: ['Winner in Code Combat'],
-  //   imageSrc: 'company/microsoft.png',
-  // },
-  // {
-  //   id: 3,
-  //   role: 'Traniee',
-  //   organisation: 'GNIT',
-  //   startDate: 'Feb,2023',
-  //   endDate: 'July,2024',
-  //   location: 'GNIT,Sodepur',
-  //   achivement: [
-  //     '  DJANGO with Python, Project: Online Book Store  certificate',
-  //     ' AI/ML ,Project: Credit Card Fraud Detection using Machine Learning',
-  //   ],
-  //   imageSrc: 'company/netflix.png',
-  // },
+export const skills = [
+  {
+    name: 'React.js',
+    level: 90,
+    icon: '/assets/react.svg',
+    category: 'Frontend',
+  },
+  {
+    name: 'JavaScript',
+    level: 85,
+    icon: '/assets/javascript.png',
+    category: 'Frontend',
+  },
+  {
+    name: 'TypeScript',
+    level: 80,
+    icon: '/assets/typescript.png',
+    category: 'Frontend',
+  },
+  {
+    name: 'Tailwind CSS',
+    level: 88,
+    icon: '/assets/tailwindcss.png',
+    category: 'Frontend',
+  },
+  {
+    name: 'HTML/CSS',
+    level: 92,
+    icon: '/assets/html.png',
+    category: 'Frontend',
+  },
+  {
+    name: 'Node.js',
+    level: 75,
+    icon: '/assets/react.svg',
+    category: 'Backend',
+  },
+  {
+    name: 'Python',
+    level: 70,
+    icon: '/assets/react.svg',
+    category: 'Backend',
+  },
+  {
+    name: 'PHP',
+    level: 65,
+    icon: '/assets/php.png',
+    category: 'Backend',
+  },
+  {
+    name: 'MySQL',
+    level: 70,
+    icon: '/assets/mysql.png',
+    category: 'Database',
+  },
+  {
+    name: 'Three.js',
+    level: 75,
+    icon: '/assets/react.svg',
+    category: '3D Graphics',
+  },
 ];
